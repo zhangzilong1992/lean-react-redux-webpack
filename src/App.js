@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Test from './pages/Test.jsx'
+import IndexRouter from './router/index.js'
 
 import './global.css'
 
-ReactDOM.render(<Test />, document.getElementById('root'));
+ReactDOM.render(<IndexRouter/>, document.getElementById('root'));
