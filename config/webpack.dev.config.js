@@ -26,7 +26,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['../dist']),
-    new webpack.NamedModulesPlugin(),
+    // new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: '一个学习用的App',
