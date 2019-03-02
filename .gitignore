@@ -1,0 +1,6 @@
+# 忽略模块文件
+/node_modules
+
+# 忽略打包后文件
+/dist
+/build
