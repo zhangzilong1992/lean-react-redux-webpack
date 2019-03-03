@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import {hot} from 'react-hot-loader/root'
 import Index from '../pages/Index.jsx'
 import Test from '../pages/Test.jsx'
