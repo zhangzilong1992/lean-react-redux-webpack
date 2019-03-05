@@ -36,7 +36,7 @@ module.exports = {
   devServer: {
     contentBase: '../dist',
     compress: true,
-    port: 8000,
+    port: 9000,
     hot: true
   },
 }

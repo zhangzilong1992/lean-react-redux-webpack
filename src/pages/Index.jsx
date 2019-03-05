@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
-import {increment, decrement} from '../redux/action'
-import {connect} from 'react-redux';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { onIncreaseClick, onDecreaseClick, onIncreaseClickSync, onDecreaseClickSync } from '../redux/action'
+import { connect } from 'react-redux';
 import './Index.css'
 
 class Index extends Component {
@@ -9,25 +9,20 @@ class Index extends Component {
     super(props)
   }
   render() {
-    const {count, onIncreaseClick, onDecreaseClick, dispatch} = this.props
+    const { count, dispatch } = this.props
     return (<div>
-      <button onClick={onIncreaseClick}>+</button>
-      <button onClick={onDecreaseClick}>-</button>
+      <button onClick={() => { dispatch(onIncreaseClick()) }}>+</button>
+      <button onClick={() => { dispatch(onDecreaseClick()) }}>-</button>
+      <button onClick={() => { dispatch(onIncreaseClickSync()) }}>+ sync</button>
+      <button onClick={() => { dispatch(onDecreaseClickSync()) }}>- sync</button>
       <span>count: {count}</span>
       {this.props.children}
-    </div>)
+    </div >)
   }
 }
 
 function mapStateToProps(state) {
-  return {count: state.count}
+  return { count: state.count }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    onIncreaseClick: () => dispatch({type: 'increase'}),
-    onDecreaseClick: () => dispatch({type: 'decrease'})
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Index)
+export default connect(mapStateToProps)(Index)
